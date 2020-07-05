@@ -1,0 +1,7 @@
+requests
+python-dateutil
+pandas
+jqdatasdk
+h5py
+numpy
+six
