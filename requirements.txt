@@ -1,7 +1,8 @@
 requests
 python-dateutil
-pandas
+pandas==0.25.3
 jqdatasdk
 h5py
 numpy
 six
+statsmodels

@@ -1,15 +1,21 @@
-from abc import ABCMeta
+from abc import ABCMeta, abstractmethod
 from simplequant.constant import EventType, OrderTime
 
 
-class Event(object):
+class Event:
     """
-    Event作为基类，为其他Event类（子类）提供接口。
+    Event作为基类，为其他Event类（子类）提供模板。
     """
 
     __metaclass__ = ABCMeta
 
-    pass
+    @abstractmethod
+    def __repr__(self):
+        pass
+
+    @abstractmethod
+    def __eq__(self, other):
+        pass
 
 
 class MarketEvent(Event):

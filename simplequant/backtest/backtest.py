@@ -40,7 +40,7 @@ class Backtest(Env):
         # 优先级队列，一共使用到两个级别，OrderEvent和FillEvent优先，MarketEvent和SignalEvent次优
         self.events_queue = queue.PriorityQueue()
 
-    def changeParameter(self, **args):
+    def changeParameters(self, **args):
         for key, value in args.items():
             if key not in ['strategy', 'interval', 'start', 'end', 'rate', 'slippage', 'initial_capital', 'heartbeat']:
                 raise ValueError('输入了无效的参数')
@@ -90,7 +90,8 @@ class Backtest(Env):
                             print(event)
                             self.portfolio.updateFromFill(event)
 
-        self.performance = Performance(self.portfolio.all_positions, self.portfolio.all_positions, self.benchmark)
+        self.performance = Performance(self.initial_capital, self.portfolio.all_positions,
+                                       self.portfolio.all_holdings, self.benchmark)
         return self.performance
 
     def report(self):
@@ -143,28 +144,4 @@ class Backtest(Env):
             raise ValueError('end参数应为形如2020-05-29形式的字符串或者形如20200529的整型数值')
 
         return start, end
-
-    # def _output_performance(self):
-    #     """
-    #     Outputs the strategy performance from the backtest.
-    #     """
-    #     self.portfolio.create_equity_curve_dataframe()
-    #
-    #     print("Creating summary stats...")
-    #     stats = self.portfolio.output_summary_stats()
-    #
-    #     print("Creating equity curve...")
-    #     print(self.portfolio.equity_curve.tail(10))
-    #     pprint.pprint(stats)
-    #
-    #     print("Signals:{}".format(self.signals))
-    #     print("Orders:{}".format(self.orders))
-    #     print("Fills:{}".format(self.fills))
-    #
-    # def simulate_trading(self):
-    #     """
-    #     Simulates the backtest and outputs portfolio performance.
-    #     """
-    #     self._run_backtest()
-    #     self._output_performance()
 

@@ -7,7 +7,7 @@ from simplequant.backtest.exception import NotTradable
 from simplequant.constant import OrderTime
 
 
-class BaseDataHandler:
+class BaseDataHandler(Env):
     """
     DataHandler is an abstract base class providing an interface for
     all subsequent (inherited) data handlers (both live and historic).
@@ -19,6 +19,8 @@ class BaseDataHandler:
     """
     __metaclass__ = ABCMeta
 
+    _database = Env._database
+
     @abstractmethod
     def updateBars(self, events):
         """
@@ -29,7 +31,7 @@ class BaseDataHandler:
         raise NotImplementedError("Should implement update_bars()")
 
 
-class RQBundleDataHandler(BaseDataHandler, Env):
+class RQBundleDataHandler(BaseDataHandler):
     def __init__(self, start, end):
         if Env._database.isLoaded() is False:
             Env._database.load()

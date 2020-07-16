@@ -5,7 +5,7 @@ from simplequant.constant import Direction
 from simplequant.backtest.exception import NotTradable
 
 
-class Portfolio(object):
+class Portfolio:
     """
     The Portfolio class handles the positions and market
     value of all instruments at a resolution of a "bar",

@@ -3,6 +3,7 @@
     <words>
       <w>backtest</w>
       <w>backtested</w>
+      <w>chibor</w>
       <w>cumprod</w>
       <w>dataframe</w>
       <w>datahandler</w>
@@ -10,7 +11,10 @@
       <w>drawdowns</w>
       <w>ffill</w>
       <w>fininshed</w>
+      <w>iloc</w>
+      <w>libor</w>
       <w>retio</w>
+      <w>shibor</w>
       <w>simplequant</w>
       <w>tradable</w>
       <w>xshe</w>
