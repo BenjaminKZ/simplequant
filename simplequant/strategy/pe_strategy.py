@@ -17,7 +17,7 @@ class PEStrategy(BaseStrategy):
         self.operating_revenue = 20000000000  # 200亿营业总收入，单位是元
         self.quantity = 400  # 每只股票买入400股
 
-        self.api.auth('13802947200', '947200')
+        self.api.auth('聚宽账号', '密码')
         self.query = self.api.query
         self.code = self.api.valuation.code
         self.market_cap = self.api.valuation.market_cap

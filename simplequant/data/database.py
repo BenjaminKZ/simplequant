@@ -277,7 +277,7 @@ class Database:
 if __name__ == '__main__':
     database = Database()
     database.load()
-    database.auth('13802947200', '947200')
+    database.auth('聚宽账号', '密码')
     database.is_auth()
     # print(database.historyBars('300722.XSHE', start='2020-05-01', end='2020-05-31'))  # 新余国科这只股票2020年5月21日进行过除权
     all_history_bars = database.allHistoryBars()

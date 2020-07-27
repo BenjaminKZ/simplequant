@@ -9,10 +9,6 @@ FIELDS_REQUIRE_ADJUSTMENT = set(list(PRICE_FIELDS) + ['volume'])
 
 
 class EventType(Enum):
-    # class MARKET(Enum):
-    #     CLOSE = 'MarketCloseEvent事件'
-    #     OPEN = 'MarketOpenEvent事件'
-
     MARKET = 'MarketEvent事件'
     SIGNAL = 'SignalEvent事件'
     ORDER = 'OrderEvent事件'

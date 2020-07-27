@@ -198,35 +198,3 @@ class Portfolio:
     def getCurrentPosition(self, symbol):
         return self.current_positions[symbol]
 
-    # def createEquityCurveDataframe(self):
-    #     """
-    #     Creates a pandas DataFrame from the all_holdings
-    #     list of dictionaries.
-    #     """
-    #     curve = pd.DataFrame(self.all_holdings)
-    #     # !!! all_holdings have duplicate index at start and end, why?
-    #     curve.set_index('datetime', inplace=True)
-    #     curve['returns'] = curve['total'].pct_change()
-    #     curve['equity_curve'] = (1.0 + curve['returns']).cumprod()
-    #     self.equity_curve = curve
-
-    # def outputSummaryStats(self):
-    #     """
-    #     Creates a list of summary statistics for the portfolio.
-    #     """
-    #     total_return = self.equity_curve['equity_curve'][-1]
-    #     returns = self.equity_curve['returns']
-    #     pnl = self.equity_curve['equity_curve']
-    #
-    #     sharpe_ratio = createSharpeRatio(returns)
-    #     drawdown, max_dd, dd_duration = createDrawdowns(pnl)
-    #     self.equity_curve['drawdown'] = drawdown
-    #
-    #     stats = [
-    #         ("Total Return", "{:0.2f}%".format((total_return - 1.0) * 100.0)),
-    #         ("Sharp Ratio", "{:0.2f}".format(sharpe_ratio)),
-    #         ("Max Drawdown", "{:0.2f}%".format(max_dd * 100.0)),
-    #         ("Drawdown Duration", "{:d}".format(dd_duration)) ]
-    #     self.equity_curve.to_csv('equity.csv')
-    #     return stats
-
