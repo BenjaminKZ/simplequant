@@ -1,0 +1,2 @@
+# Simplequant
+Simplequant is a beginner friendly backtesting framework based on event-driven engine. This project is started as a course project by four energetic students but now publicly accessible on Github. We hope our work can provide a little help for those interested in quantitative trading.
